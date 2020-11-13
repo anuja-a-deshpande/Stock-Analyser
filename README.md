@@ -10,22 +10,30 @@
     - Method: RMSE (Root mean square error)
 
 ## Usage:
-    1. StockTestSVR:
-       python3 ./<projectdirectory>/StockTestSVR.py
-       Input data files : Put below input files in the root of your <projectdirectory>:
-            1. stockdataTrain_SVR.csv 
-                - Contains two columns : Stock1 Prices and Stock2 prices.
-                - We use this data to train our model. And we will try to find out corelation between them.
-            2. stockdataTest_SVR.csv 
-                - Contains two columns : Stock1 Prices and Stock2 prices.
-                - We use this data to test our model. Using Stock1 Prices we will predict  Stock2 prices.
-    
-    2. StockTestRMSE:
-        python3 ./<projectdirectory>/StockTestRMSE.py
-        Input data files : Put below input files in the root of your <projectdirectory>:
-            1. stockdataTrain_RMSE.csv
-                - Contains two columns : Dates and Stock Prices.
-                - We use this 65% data to train our model, we will rest of the data as test data. And we will predict future stock prices.
+1. StockTestSVR:  
+
+    ```python3 ./<projectdirectory>/StockTestSVR.py```  
+ 
+    Using `Stock1` Prices we will predict `Stock2` prices.  
+    Place input files in the root of your `<projectdirectory>`:  
+    - stockdataTrain_SVR.csv
+        - Contains two columns : Stock1 (Reference) Prices and Stock2 (Test Subject) prices.
+        - We use this data to train our model. And we will try to find out corelation between them.  
+
+    - stockdataTest_SVR.csv 
+        - Contains two columns : Stock1 Prices and Stock2 prices.
+        - We use this data to test our model.  
+
+2. StockTestRMSE:
+
+    ```python3 ./<projectdirectory>/StockTestRMSE.py```  
+
+    Using `Historical Price Data` we predict `future stock prices`.   
+
+    Place input files in the root of your `<projectdirectory>`:
+    - stockdataTrain_RMSE.csv
+        - Contains two columns : Dates and Stock Prices.
+        - We use this 65% data to train our model, we will rest of the data as test data. And we will predict future stock prices.
 
 
 ## Future Scope:
