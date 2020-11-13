@@ -25,15 +25,14 @@ def predict_price(stock1, stock2, x):
 	# svr_poly.fit(stock1, stock2)
 	return svr_rbf.predict(x)
 
-get_data('stock data - Train3.csv', stock1_train, stock2_train) # calling get_data method by passing the csv file to it
+get_data('stockdataTrain_SVR.csv', stock1_train, stock2_train) # calling get_data method by passing the csv file to it
 
 stock1_test = []
 stock2_test = []
-get_data('stock data - Test3.csv', stock1_test, stock2_test)
+get_data('stockdataTest_SVR.csv', stock1_test, stock2_test)
 
-print(stock1_test)
-print(stock2_test)
+print("Stock1 Prices:", stock1_test, "\n")
+print("Stock2 Actual Prices:", stock2_test, "\n")
 
 predicted_price = predict_price(stock1_train, stock2_train, stock1_test) 
-
-print(predicted_price)
+print("Stock2 Predicted Prices:", predicted_price, "\n")

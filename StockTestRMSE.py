@@ -8,7 +8,7 @@ import tensorflow as tf
 import math
 from sklearn.metrics import mean_squared_error
 
-df = pd.read_csv('stock data - Train.csv')
+df = pd.read_csv('stockdataTrain_RMSE.csv')
 
 df1 = df.reset_index()['Close']
 
@@ -55,9 +55,9 @@ test_predict = model.predict(X_test)
 train_predict = scaler.inverse_transform(train_predict)
 test_predict = scaler.inverse_transform(test_predict)
 
-print(test_predict)
+print("Stock Predicted Prices:", test_predict, "\n")
 
 ### Calculate RMSE performance metrics
-print(math.sqrt(mean_squared_error(y_train,train_predict)))
-print(math.sqrt(mean_squared_error(y_test,test_predict)))
+print("Root Mean Squared Error of train data:", math.sqrt(mean_squared_error(y_train,train_predict)), "\n")
+print("Root Mean Squared Error of test data:",math.sqrt(mean_squared_error(y_test,test_predict)))
 
